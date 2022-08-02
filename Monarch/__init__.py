@@ -181,11 +181,11 @@ except AttributeError:
 MONARCH = Client(':memory:', api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 PLUGINS = dict(
     root="plugins",
-    """include=[
+    include=[
         "vc." + environ["PLUGIN"],
         "ping",
         "sysinfo"
-    ]"""
+    ]
 )
 
 ub = Client(STRING_SESSION, API_ID, API_HASH, plugins=PLUGINS)
