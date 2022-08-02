@@ -39,7 +39,7 @@ logging.basicConfig(
     filename="log.txt",
     level=logging.INFO,
     filemode="a",
-    format="%(asctime)s - [MonarchUB] - %(levelname)s - %(message)s"
+    format="%(asctime)s - [MonarchUB] - %(levelname)s - %(message)s",
     #format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
     datefmt='%H:%M:%S',
 )
