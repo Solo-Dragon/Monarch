@@ -1,6 +1,7 @@
 wget
 Pillow
 aiohttp
+psutil
 tgcrypto
 pymoe
 requests_html
