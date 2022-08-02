@@ -49,7 +49,7 @@ def main():
     MONARCH.run()
     ub.start()
     print('>>> USERBOT STARTED')
-    MONARCH.send_message(5378543429, "I'm awake... My Leige!!")
+    MONARCH.send_message(-1001755588048, "I'm awake... My Leige!!")
 
 
 if __name__ == "__main__":
