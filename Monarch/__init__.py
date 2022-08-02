@@ -68,6 +68,7 @@ PLAY_PIC = (
 
 QUEUE_PIC = (
     os.environ.get("QUEUE_PIC") or "https://images6.alphacoders.com/105/1055057.png"
+)
 
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads/") 
 
