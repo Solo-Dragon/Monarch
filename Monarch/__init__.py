@@ -188,7 +188,7 @@ PLUGINS = dict(
     ]"""
 )
 
-ub = Client(SESSION_NAME, API_ID, API_HASH, plugins=PLUGINS)
+ub = Client(STRING_SESSION, API_ID, API_HASH, plugins=PLUGINS)
 # logging.basicConfig(level=logging.INFO)
 app.start()
 print('>>> USERBOT STARTED')
