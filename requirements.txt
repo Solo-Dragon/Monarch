@@ -21,7 +21,8 @@ dnspython
 motor<2.4.0,>=2.1.0
 speedtest-cli
 redis
-pytgcalls
+pytgcalls==2.1.0
 telegraph
 odmantic
 tracemoepy
+tgcalls==2.0.0
