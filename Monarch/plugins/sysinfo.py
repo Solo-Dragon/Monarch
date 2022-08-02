@@ -4,6 +4,7 @@ import psutil
 # noinspection PyProtectedMember
 from psutil._common import bytes2human
 from pyrogram import Client, filters
+from Monarch import MONARCH
 
 self_or_contact_filter = filters.create(
     lambda _, __, message:
@@ -62,12 +63,15 @@ async def generate_sysinfo(workdir):
             + "```")
 
 
-@Client.on_message(filters.group
+"""@MONARCH.on_message(filters.group
                    & filters.text
                    & self_or_contact_filter
                    & ~filters.edited
                    & ~filters.via_bot
-                   & filters.regex("^!sysinfo$"))
+                   & filters.regex("^!sysinfo$"))"""
+@MONARCH.on_message(
+    filters.command(["sysinfo", "status"], "?") & filters.me
+)
 async def get_sysinfo(client, m):
     response = "**System Information**:\n"
     m_reply = await m.reply_text(f"{response}`...`")
