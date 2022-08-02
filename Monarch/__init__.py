@@ -203,9 +203,9 @@ ub = Client(
     api_id=os.environ.get('API_ID'),
     api_hash=os.environ['API_HASH'],
 )
-
+""""
 ub.start()
 print('>>> USERBOT STARTED')
 idle()
 ub.stop()
-print('\n>>> USERBOT STOPPED')
+print('\n>>> USERBOT STOPPED')"""
