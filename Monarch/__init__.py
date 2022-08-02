@@ -24,7 +24,7 @@ UPSTREAM_REPO = os.environ.get(
     "UPSTREAM_REPO_URL", "https://github.com/Solo-Dragon/MonarchUB"
 )
 
-
+MONARCH_VERSION = "DEMON V2"
 # Logging channel/group ID configuration.
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID") or 0)
 
