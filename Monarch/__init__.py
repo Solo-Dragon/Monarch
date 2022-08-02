@@ -204,8 +204,8 @@ ub = Client(
     api_hash=os.environ['API_HASH'],
 )
 
-app.start()
+ub.start()
 print('>>> USERBOT STARTED')
 idle()
-app.stop()
+ub.stop()
 print('\n>>> USERBOT STOPPED')
