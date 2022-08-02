@@ -178,7 +178,9 @@ try:
 except AttributeError:
     pass 
 """
-MONARCH = Client(':memory:', api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+# MONARCH = Client(':memory:', api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+
+'''
 PLUGINS = dict(
     root="plugins",
     include=[
@@ -188,8 +190,20 @@ PLUGINS = dict(
     ]
 )
 
-ub = Client(STRING_SESSION, API_ID, API_HASH, plugins=PLUGINS)
+ub = Client(STRING_SESSION, API_ID, API_HASH, plugins=PLUGINS)'''
+
+MONARCH = Client('bot',
+             api_id=os.environ.get('API_ID'),
+             api_hash=os.environ['API_HASH'],
+             bot_token=os.environ['BOT_TOKEN'],
+             plugins=dict(root=f"{__name__}/plugins"))
 # logging.basicConfig(level=logging.INFO)
+ub = Client(
+    STRING_SESSION,
+    api_id=os.environ.get('API_ID'),
+    api_hash=os.environ['API_HASH'],
+)
+
 app.start()
 print('>>> USERBOT STARTED')
 idle()
