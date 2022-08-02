@@ -7,12 +7,12 @@ import importlib
 from pyrogram import filters
 
 import logging
-
+"""
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - [MonarchUB] - %(levelname)s - %(message)s"
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
+"""
 StartTime = datetime.now()
 
 def load_cmds(ALL_PLUGINS):
@@ -34,5 +34,26 @@ def load_cmds(ALL_PLUGINS):
             HELP_COMMANDS[imported_module.__PLUGIN__.lower()] = imported_module.__help__
     return "Done Loading Plugins and Commands!"
 
-if __name__ == "__main__":
+
+logging.basicConfig(
+    filename="log.txt",
+    level=logging.INFO,
+    filemode="a",
+    format="%(asctime)s - [MonarchUB] - %(levelname)s - %(message)s"
+    #format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+    datefmt='%H:%M:%S',
+)
+
+
+def main():
     MONARCH.run()
+    app.start()
+    MONARCH.send_message("SungJinWOOX", "I'm Now online")
+
+
+if __name__ == "__main__":
+    main()
+
+"""
+if __name__ == "__main__":
+    MONARCH.run()"""
