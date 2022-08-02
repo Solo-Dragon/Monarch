@@ -70,7 +70,7 @@ async def generate_sysinfo(workdir):
                    & ~filters.via_bot
                    & filters.regex("^!sysinfo$"))"""
 @ub.on_message(
-    filters.command(["sysinfo", "status"], "?") & filters.me
+    filters.command(["sysinfo", "status"], prefixes = "?") & filters.me
 )
 async def get_sysinfo(client, m):
     response = "**System Information**:\n"
