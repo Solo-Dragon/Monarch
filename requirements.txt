@@ -12,6 +12,8 @@ requests
 google_trans_new
 emoji
 aiofiles
+poetry
+numpy
 pyrogram
 requests
 aiohttp[speedups]
