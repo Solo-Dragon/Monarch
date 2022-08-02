@@ -14,7 +14,13 @@ STRING_3 = os.environ.get("STRING_3", None)
 STRING_4 = os.environ.get("STRING_4", None)
 STRING_5 = os.environ.get("STRING_5", None)
 
-UPSTREAM_REPO_URL = os.environ.get(
+PREFIX = os.environ.get("PREFIX", ".")
+OWNER_NAME = os.environ.get("OWNER_NAME", "Shadow Monarch")
+SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
+LOG_GROUP_ID = int(os.environ.get("LOG_GROUP_ID", -100))
+
+
+UPSTREAM_REPO = os.environ.get(
     "UPSTREAM_REPO_URL", "https://github.com/Solo-Dragon/MonarchUB"
 )
 
