@@ -71,7 +71,7 @@ QUEUE_PIC = (
 )
 
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads/") 
-
+"""
 # 'bot' variable
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
@@ -153,8 +153,8 @@ if STRING_5:
 else:
     call_py5 = None
     Shadow5 = None
-
-
+"""
+"""
 async def update_restart_msg(chat_id, msg_id):
     message = (
         f"**Monarch v{BOT_VER} is back up and running!**\n\n"
@@ -177,5 +177,21 @@ try:
     delgvar("restartstatus")
 except AttributeError:
     pass 
-
+"""
 MONARCH = Client(':memory:', api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+PLUGINS = dict(
+    root="plugins",
+    """include=[
+        "vc." + environ["PLUGIN"],
+        "ping",
+        "sysinfo"
+    ]"""
+)
+
+ub = Client(SESSION_NAME, API_ID, API_HASH, plugins=PLUGINS)
+# logging.basicConfig(level=logging.INFO)
+app.start()
+print('>>> USERBOT STARTED')
+idle()
+app.stop()
+print('\n>>> USERBOT STOPPED')
