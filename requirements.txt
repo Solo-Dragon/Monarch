@@ -14,7 +14,7 @@ emoji
 aiofiles
 poetry
 numpy
-pyrogram
+pyrogram==1.4.16
 requests
 aiohttp[speedups]
 bs4
