@@ -1,0 +1,64 @@
+{
+    "name": "Lycia",
+    "description": "Monarch Userbot",
+    "logo": "https://telegra.ph/file/3a8f9619cc682c6ef403b.jpg",
+      "keywords": [
+      "Userbot",
+      "Pyrogram",
+      "anime",
+      "Solo-Leveling",
+      "AI"
+    ],
+    "repository": "https://github.com/Solo-Dragon/Monarch",
+    "env": {
+      "API_ID": {
+        "description": "API ID HERE",
+        "value": ""
+      },
+      "API_HASH": {
+        "description": "API HASH HERE",
+        "value": ""
+      },
+      "DB_URI": {
+        "description": "DB_URI HERE SQL or MOngo (unspecified)",
+        "value": ""
+      },
+      "STRING_SESSION": {
+        "description": "STRING_SESSION HERE",
+        "value": ""
+      },
+      "S_PACK_NAME": {
+        "description": "S_PACK_NAME HERE",
+        "value": "@SungJinWooX Pack"
+      },
+      "ALIVE_NAME": {
+        "description": "ALIVE_NAME HERE",
+        "value": ""
+      },
+      "ALIVE_LOGO": {
+        "description": "ALIVE_LOGO HERE (telegraph image)",
+        "value": ""
+      },
+      "BOT_USERNAME": {
+        "description": "Bot username HERE",
+        "value": ""
+      },
+      "BOTLOG_CHATID": {
+        "description": "BOTLOG_CHATID HERE",
+        "value": "-1001737390919"
+      },
+      "TOKEN": {
+        "description": "TOKEN HERE (get it from @botfather)",
+        "value": ""
+      }
+    },
+    "addons": [{
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }],
+    "buildpacks": [{
+      "url": "heroku/python"
+    }]
+  }
