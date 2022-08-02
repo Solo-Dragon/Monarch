@@ -48,7 +48,8 @@ logging.basicConfig(
 def main():
     MONARCH.run()
     ub.start()
-    MONARCH.send_message("SungJinWOOX", "I'm Now online")
+    print('>>> USERBOT STARTED')
+    MONARCH.send_message(5378543429, "I'm awake... My Leige!!")
 
 
 if __name__ == "__main__":
