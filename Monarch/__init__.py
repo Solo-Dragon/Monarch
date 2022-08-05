@@ -209,9 +209,9 @@ MONARCH = Client('bot',
              plugins=dict(root=f"{__name__}/plugins"))
 # logging.basicConfig(level=logging.INFO)
 ub = Client(
-    STRING_SESSION,
     api_id=os.environ.get('API_ID'),
     api_hash=os.environ['API_HASH'],
+    STRING_SESSION,
 )
 """"
 ub.start()
