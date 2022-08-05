@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 import importlib
 from pyrogram import Client
+from pyrogram.session import Session
 
 StartTime = datetime.now()
 
@@ -204,7 +205,7 @@ ub = Client(STRING_SESSION, API_ID, API_HASH, plugins=PLUGINS)'''
 ub = Client(
     api_id=os.environ.get('API_ID'),
     api_hash=os.environ['API_HASH'],
-    session=STRING_SESSION,
+    string_session=STRING_SESSION,
 )
 
 MONARCH = Client('bot',
