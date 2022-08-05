@@ -201,6 +201,11 @@ PLUGINS = dict(
 )
 
 ub = Client(STRING_SESSION, API_ID, API_HASH, plugins=PLUGINS)'''
+ub = Client(
+    api_id=os.environ.get('API_ID'),
+    api_hash=os.environ['API_HASH'],
+    STRING_SESSION,
+)
 
 MONARCH = Client('bot',
              api_id=os.environ.get('API_ID'),
@@ -208,11 +213,7 @@ MONARCH = Client('bot',
              bot_token=os.environ['TOKEN'],
              plugins=dict(root=f"{__name__}/plugins"))
 # logging.basicConfig(level=logging.INFO)
-ub = Client(
-    api_id=os.environ.get('API_ID'),
-    api_hash=os.environ['API_HASH'],
-    STRING_SESSION,
-)
+
 """"
 ub.start()
 print('>>> USERBOT STARTED')
