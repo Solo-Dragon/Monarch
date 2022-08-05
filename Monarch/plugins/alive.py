@@ -23,7 +23,7 @@ Basic Commands of Userbot!
 @ub.on_message(
     filters.command(["alive", "start"], PREFIX) & SUDO_USERS
 )
-async def check_alive(c: ub, m: Message):
+async def check_alive(_, message):
     alive_img = "https://telegra.ph/file/4c45dfc1a093224ea82d0.jpg"
     alive_str = f"""
 「**[Igris]({UPSTREAM_REPO})**」 **is here at your service!!**
@@ -33,16 +33,16 @@ async def check_alive(c: ub, m: Message):
 **Uptime**: `{str(datetime.now() - StartTime).split('.')[0]}`
 **Python Version**: `3.9.6`
 """    
-    await m.delete()
-    if m.reply_to_message:
+    await message.delete()
+    if message.reply_to_message:
         await c.send_photo(
-            m.chat.id,
+            message.chat.id,
             alive_img,
             caption=alive_str,
-            reply_to_message_id=m.reply_to_message.message_id,
+            reply_to_message_id=message.reply_to_message.message_id,
         )
     else:
-        await c.send_photo(m.chat.id, alive_img, caption=alive_str)
+        await c.send_photo(message.chat.id, alive_img, caption=alive_str)
 
 
 @ub.on_message(
