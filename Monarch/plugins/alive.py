@@ -6,7 +6,7 @@ from platform import python_version
 from Monarch import ub
 from pyrogram import filters, __version__
 from pyrogram.types import Message
-from Monarch import PREFIX, OWNER_NAME, MONARCH_VERSION, UPSTREAM_REPO, StartTime
+from Monarch import PREFIX, OWNER_NAME, MONARCH_VERSION, UPSTREAM_REPO, StartTime, SUDO_USERS
 from pyrogram.raw.all import layer
 from Monarch.helpers.clear_strings import clear_string
 
@@ -18,9 +18,10 @@ Basic Commands of Userbot!
 `{PREFIX}json`: Get json of the replied message.
 """
 
+#@ub.on_message(filters.command("alive", prefixes=USERBOT_PREFIX) & SUDO_USERS)
 
 @ub.on_message(
-    filters.command(["alive", "start"], PREFIX) & filters.me
+    filters.command(["alive", "start"], PREFIX) & SUDO_USERS
 )
 async def check_alive(c: ub, m: Message):
     alive_img = "https://telegra.ph/file/4c45dfc1a093224ea82d0.jpg"
@@ -45,14 +46,14 @@ async def check_alive(c: ub, m: Message):
 
 
 @ub.on_message(
-    filters.command("repo", PREFIX) & filters.me
+    filters.command("repo", PREFIX) & SUDO_USERS
 )
 async def repo(c: ub, message: Message):
     repo = "Official Source Code Of [Cynics](https://github.com/Solo-Dragon)"
     await message.edit_text(repo, disable_web_page_preview=True)
 
 
-@ub.on_message(filters.command("id", PREFIX) & filters.me)
+@ub.on_message(filters.command("id", PREFIX) & SUDO_USERS)
 async def get_id(c: ub, m: Message):
     file_id = None
     user_id = None
@@ -111,7 +112,7 @@ async def get_id(c: ub, m: Message):
         await m.edit_text(f"**This Chat's ID:** `{m.chat.id}`")
 
 
-@ub.on_message(filters.command("json", PREFIX) & filters.me)
+@ub.on_message(filters.command("json", PREFIX) & SUDO_USERS)
 async def jsonify(c: ub, m: Message):
     the_real_message = None
     reply_to_id = None
@@ -130,12 +131,12 @@ async def jsonify(c: ub, m: Message):
         await m.delete()
     return
 
-@ub.on_message(filters.command("save", PREFIX) & filters.me)
+@ub.on_message(filters.command("save", PREFIX) & SUDO_USERS)
 async def to_saved(c: ub, message: Message):
     await message.reply_to_message.forward("self")
     await message.edit_text('`Saved message.`')
 
-@ub.on_message(filters.command(["uptime", "up"], PREFIX) & filters.me)
+@ub.on_message(filters.command(["uptime", "up"], PREFIX) & SUDO_USERS)
 async def uptime(c: ub, message: Message):
     uptime = f"**Current Uptime:** `{str(datetime.now() - StartTime).split('.')[0]}`"
     await message.edit_text(uptime)
