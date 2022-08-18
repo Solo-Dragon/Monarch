@@ -14,6 +14,7 @@ TOKEN = os.environ.get("TOKEN", None)
 #BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
+OWNER_ID = os.environ.get("OWNER_ID", None)
 STRING_SESSION = os.environ.get("STRING_SESSION", None)
 STRING_2 = os.environ.get("STRING_2", None)
 STRING_3 = os.environ.get("STRING_3", None)
