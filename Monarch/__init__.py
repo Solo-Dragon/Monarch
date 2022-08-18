@@ -3,6 +3,7 @@ from datetime import datetime
 import importlib
 from pyrogram import Client, filters, idle
 from pyrogram.session import Session
+from pyrogram.types import *
 
 StartTime = datetime.now()
 
