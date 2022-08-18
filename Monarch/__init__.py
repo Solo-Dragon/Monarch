@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 import importlib
-from pyrogram import Client
+from pyrogram import Client, filters, idle
 from pyrogram.session import Session
 
 StartTime = datetime.now()
@@ -207,7 +207,36 @@ ub = Client(
     api_hash=os.environ['API_HASH'],
     string_session=STRING_SESSION,
 )'''
+
+if not STRING_SESSION1:
+    logging.error("No String Session Found! Exiting!")
+    quit(1)
+
+if not API_ID:
+    logging.error("No Api-ID Found! Exiting!")
+    quit(1)
+
+if not MONGO_DB:
+    logging.error("No MongoDB Found! Exiting!")
+    quit(1)
+
+if not API_HASH:
+    logging.error("No ApiHash Found! Exiting!")
+    quit(1)
+
+
+if LOG_CHAT:
+    LOG_GROUP = LOG_CHAT
+else:
+    LOG_GROUP = 777000
+OWNER_ID = LOG_GROUP
+
 ub = Client(STRING_SESSION, api_id=API_ID, api_hash=API_HASH)
+
+if STRING_SESSION:
+    botx = Client(session_name= STRING_SESSION1, api_id = API_ID, api_hash = API_HASH , plugins=dict(root=f"{__name__}/plugins/ub"))
+else:
+    botx = None
 
 MONARCH = Client('bot',
              api_id=os.environ.get('API_ID'),
