@@ -211,11 +211,11 @@ ub = Client(
 )'''
 
 
-if LOG_CHAT:
+if LOG_GROUP_ID:
     LOG_GROUP = LOG_CHAT
 else:
     LOG_GROUP = 777000
-OWNER_ID = LOG_GROUP
+OWNER_ID = LOG_GROUP_ID
 
 ub = Client(STRING_SESSION, api_id=API_ID, api_hash=API_HASH)
 
