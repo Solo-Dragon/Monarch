@@ -25,6 +25,7 @@ PREFIX = os.environ.get("PREFIX", ".")
 OWNER_NAME = os.environ.get("OWNER_NAME", "Shadow Monarch")
 SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
 LOG_GROUP_ID = int(os.environ.get("LOG_GROUP_ID", -100))
+LOG_CHAT = int(os.environ.get("LOG_GROUP_ID", None))
 
 
 UPSTREAM_REPO = os.environ.get(
