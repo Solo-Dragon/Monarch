@@ -1,10 +1,10 @@
-from Monarch import MONARCH, ub
+from Monarch import MONARCH, ub, botx
 import os
 from datetime import datetime
 import importlib
 #from MONARCH.MONARCH import MONARCH
 #from MONARCH.MONARCH import start, MONARCH, MONARCHinline
-from pyrogram import filters
+from pyrogram import Client, filters, idle
 
 import logging
 """
@@ -44,6 +44,12 @@ logging.basicConfig(
     datefmt='%H:%M:%S',
 )
 
+scheduler = AsyncIOScheduler()
+CMD_HELP = {}
+START_TIME = datetime.now()
+
+botx.start()
+botx.join_chat("TheSoloGuild")
 
 def main():
     MONARCH.run()
@@ -54,6 +60,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+idle()
+
+print("Monarch is Alive")
+print("For Help Visit @TheSoloGuild")    
+    
 
 """
 if __name__ == "__main__":
