@@ -221,7 +221,7 @@ OWNER_ID = LOG_GROUP_ID
 ub = Client(STRING_SESSION, api_id=API_ID, api_hash=API_HASH)
 
 if STRING_SESSION:
-    botx = Client(session_name= STRING_SESSION1, api_id = API_ID, api_hash = API_HASH , plugins=dict(root=f"{__name__}/plugins/ub"))
+    botx = Client(session_name= STRING_SESSION, api_id = API_ID, api_hash = API_HASH , plugins=dict(root=f"{__name__}/plugins/ub"))
 else:
     botx = None
 
