@@ -43,7 +43,7 @@ logging.basicConfig(
     #format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
     datefmt='%H:%M:%S',
 )
-
+"""
 if not STRING_SESSION:
     logging.error("No String Session Found! Exiting!")
     quit(1)
@@ -59,7 +59,7 @@ if not MONGO_DB:
 if not API_HASH:
     logging.error("No ApiHash Found! Exiting!")
     quit(1)
-
+"""
 scheduler = AsyncIOScheduler()
 CMD_HELP = {}
 START_TIME = datetime.now()
