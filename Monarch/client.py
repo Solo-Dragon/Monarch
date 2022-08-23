@@ -1,13 +1,12 @@
 from pyrogram import Client
-from Monarch import API_HASH, API_ID, BOT_TOKEN, SESSION_NAME
-
+from Monarch import API_HASH, API_ID, TOKEN, SESSION_NAME
 
 bot = Client(
     ":mona:",
     API_ID,
     API_HASH,
     bot_token=BOT_TOKEN,
-    plugins={"root": "program"},
+    plugins={"root": "Monarch/plugins"},
 )
 
 user = Client(
