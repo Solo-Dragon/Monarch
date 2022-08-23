@@ -5,7 +5,7 @@ bot = Client(
     ":mona:",
     API_ID,
     API_HASH,
-    bot_token=BOT_TOKEN,
+    bot_token=TOKEN,
     plugins={"root": "Monarch/plugins"},
 )
 
