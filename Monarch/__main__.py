@@ -83,8 +83,6 @@ def main():
 async def start_bot():
     await bot.start()
     LOGS.info("[INFO]: BOT & USERBOT CLIENT STARTED !!")
-    await calls.start()
-    LOGS.info("[INFO]: PY-TGCALLS CLIENT STARTED !!")
     await user.join_chat("KazutoSupport")
     await user.join_chat("AinCradNetwork")
     await user.join_chat("TheSoloGuild")
@@ -96,7 +94,6 @@ if __name__ == "__main__":
     main()
     loop = asyncio.get_event_loop()
     loop.run_until_complete(start_bot())
-    idle()
     print("Monarch is Alive")
     print("For Help Visit @TheSoloGuild")
     
