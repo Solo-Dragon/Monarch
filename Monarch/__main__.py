@@ -5,6 +5,8 @@ import importlib
 #from MONARCH.MONARCH import MONARCH
 #from MONARCH.MONARCH import start, MONARCH, MONARCHinline
 from pyrogram import Client, filters, idle
+from Monarch.client import bot, user
+
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
@@ -77,10 +79,23 @@ def main():
     print('>>> USERBOT STARTED')
     botx.send_message("TheSoloGuild", "I'm awake")
     MONARCH.send_message(-1001755588048, "I'm awake... My Leige!!")
-
-
+    
+async def start_bot():
+    await bot.start()
+    LOGS.info("[INFO]: BOT & USERBOT CLIENT STARTED !!")
+    await calls.start()
+    LOGS.info("[INFO]: PY-TGCALLS CLIENT STARTED !!")
+    await user.join_chat("KazutoSupport")
+    await user.join_chat("AinCradNetwork")
+    await user.join_chat("TheSoloGuild")
+    await idle()
+    LOGS.info("[INFO]: BOT & USERBOT STOPPED !!")
+    await bot.stop()
+    
 if __name__ == "__main__":
     main()
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(start_bot())
     idle()
     print("Monarch is Alive")
     print("For Help Visit @TheSoloGuild")
