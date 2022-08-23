@@ -72,17 +72,22 @@ botx.join_chat("TheSoloGuild")
 def main():
     MONARCH.run()
     ub.start()
+    botx.start()
+    botx.join_chat("TheSoloGuild")
     print('>>> USERBOT STARTED')
+    botx.send_message("TheSoloGuild", "I'm awake")
     MONARCH.send_message(-1001755588048, "I'm awake... My Leige!!")
 
 
 if __name__ == "__main__":
     main()
+    idle()
+    print("Monarch is Alive")
+    print("For Help Visit @TheSoloGuild")
     
-idle()
 
-print("Monarch is Alive")
-print("For Help Visit @TheSoloGuild")    
+
+    
     
 
 """
