@@ -1,4 +1,4 @@
-from Monarch import MONARCH, ub, botx
+from Monarch import MONARCH, ub
 import os
 from datetime import datetime
 import importlib
@@ -67,17 +67,17 @@ if not API_HASH:
 scheduler = AsyncIOScheduler()
 CMD_HELP = {}
 START_TIME = datetime.now()
-
+"""
 botx.start()
 botx.join_chat("TheSoloGuild")
-
+"""
 def main():
     MONARCH.run()
     ub.start()
-    botx.start()
-    botx.join_chat("TheSoloGuild")
+    #botx.start()
+    #botx.join_chat("TheSoloGuild")
     print('>>> USERBOT STARTED')
-    botx.send_message("TheSoloGuild", "I'm awake")
+    #botx.send_message("TheSoloGuild", "I'm awake")
     MONARCH.send_message(-1001755588048, "I'm awake... My Leige!!")
     
 async def start_bot():
